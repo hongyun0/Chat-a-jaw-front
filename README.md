@@ -1,16 +1,42 @@
 # chatajaw
 
-A new Flutter project.
-
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. SDK 설치
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+$ cd ~/development
+$ wget https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.12.13+hotfix.8-stable.zip
+$ unzip ./flutter_macos_v1.12.13+hotfix.8-stable.zip
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+2. path 에 추가
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+$ export PATH="$PATH:`pwd`/flutter/bin"
+```
+
+3. 바이너리 설치
+
+```bash
+$ flutter precache
+```
+
+4. Xcode 설치
+
+```bash
+$ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+$ sudo xcodebuild -runFirstLaunch
+```
+
+5. iOS 시뮬레이터 실행
+
+```bash
+$ open -a Simulator
+```
+
+6. 플루터 실행
+
+```bash
+$ flutter run
+```
