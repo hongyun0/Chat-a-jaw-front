@@ -1,4 +1,4 @@
-package com.example.chatajaw
+package com.mocktoy.chatajaw
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
