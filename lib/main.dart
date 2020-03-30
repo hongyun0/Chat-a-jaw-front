@@ -139,6 +139,23 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  void _handlePushMySelfEvent(BuildContext context) {
+    http.post("$_myServerUrl/notifications/messages",
+        body: jsonEncode({
+          "targetTokens": [_token],
+          "title": "제목이다.",
+          "content": "내용이다."
+        }),
+        headers: {'Content-Type': "application/json"}).then((response) {
+      print(jsonDecode(response.body));
+      if (jsonDecode(response.body)["failureCount"] == 0) {
+        print("푸시 전송 성공!");
+      } else {
+        print("푸시 전송 실패!");
+      }
+    });
+  }
+
   void _handleApplyEvent(BuildContext context) {
     http
         .get("https://google.com")
@@ -188,6 +205,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                   mainAxisAlignment: MainAxisAlignment.center,
                 ),
+                Row(
+                  children: [
+                    FlatButton(
+                      child: Text("Push my self"),
+                      onPressed: () => _handlePushMySelfEvent(context),
+                    ),
+                  ],
+                )
               ],
             ),
           ),
