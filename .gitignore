@@ -126,3 +126,4 @@ app.*.symbols
 *.xz
 *.lzma
 *.cab
+google-services.json
